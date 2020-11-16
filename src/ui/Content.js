@@ -11,14 +11,22 @@ class Content extends React.PureComponent {
 
         this.state = {
             posts: null,
+            height: 200,
         };
+
+        this.ref = React.createRef();
     };
 
-    componentDidMount() {
+    componentDidMount = () => {
+        const ref = this.ref.current.getBoundingClientRect();
+
+        this.setState({
+            height: ref.width / 6
+        });
+
         // Gets informations about a user
         userInstagram('bcs_tile') // Same as getUserData()
             .then((value) => {
-                // console.log(value);
                 this.setState({
                     posts: value.posts
                 });
@@ -31,13 +39,13 @@ class Content extends React.PureComponent {
 
     render() {
         return (
-            <Container maxWidth="md" disableGutters>
+            <Container maxWidth="lg" disableGutters ref={this.ref}>
                 {/* User to push content below AppBar */}
                 <Toolbar />
 
-                <Hero />
+                <Hero {...this.state} />
 
-                <Gallery posts={this.state.posts} />
+                <Gallery {...this.state} />
             </Container>
         );
     }

@@ -6,6 +6,7 @@ import Gallery from "./Gallery.js";
 import Header from "./Header.js";
 import Hero from "./Hero.js";
 import Button from "./Button.js";
+import QuoteButton from "./QuoteButton.js";
 
 export {
     CompanyInfo,
@@ -16,4 +17,5 @@ export {
     Header,
     Hero,
     Button,
+    QuoteButton,
 };

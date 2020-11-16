@@ -6,7 +6,16 @@ const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: 'transparent',
         padding: theme.spacing(1, 2),
-        border: '2px solid #444444',
+        
+
+        // '&.filled': {
+        //     backgroundColor: 'rgb(0,0,255)',
+        //     color: 'rgb(255,0,135)',
+        // },
+
+        // '&.oulined': {
+        //     border: '2px solid #444444',
+        // }
     },
 }));
 
@@ -15,7 +24,7 @@ const Button = (props) => {
     const { children } = props;
 
     return (
-        <MuiButton className={classes.root} {...props}> 
+        <MuiButton className={classes.root} {...props} disableElevation disableRipple> 
             {children}
         </MuiButton>
     );

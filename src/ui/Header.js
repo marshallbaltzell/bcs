@@ -1,10 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { SocialMediaLinks, CompanyInfo, Button, BCSLogoIcon } from '../ui/index.js';
+import { SocialMediaLinks, CompanyInfo, QuoteButton, BCSLogoIcon } from '../ui/index.js';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles((theme) => ({
     appbar: {
@@ -35,9 +34,7 @@ function Header() {
                 <Grid container spacing={0}>
                     <Grid item xs={5} className={classes.left}>
                         <SocialMediaLinks />
-                        <Button size="small">
-                            <AttachMoneyIcon /> Get a Quote
-                        </Button>
+                        <QuoteButton />
                     </Grid>
                     <Grid item xs={2} className={classes.center}>
                         <BCSLogoIcon />
