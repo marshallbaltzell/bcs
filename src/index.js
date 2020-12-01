@@ -1,14 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import "fontsource-nunito-sans";
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      '"Nunito Sans"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+    button: {
+      fontWeight: 900,
+    }
+  },
+  palette: {
+    primary: {
+      main: '#F9A500', // orange
+      contrastText: '#17325B',
+    },
+    secondary: {
+      main: '#17325B', // dark blue
+      contrastText: '#FFFFFF'
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <CssBaseline />
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
