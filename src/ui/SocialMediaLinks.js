@@ -29,12 +29,24 @@ const SocialMediaLinks = (props) => {
 
     return (
         <>
-        <Typography className={classes.label} variant="button">Connect</Typography>
+        <Typography 
+            className={classes.label}
+            variant="button">
+                Connect
+        </Typography>
         <Box className={classes.links}>
-                <Link className={`${classes.button} ${color}`} href="https://www.instagram.com/bcs_tile/" rel="noopener noreferrer" target="_blank">
+                <Link
+                    className={`${classes.button} ${color}`}
+                    href="https://www.instagram.com/bcs_tile/"
+                    rel="noopener noreferrer"
+                    target="_blank">
                 <InstagramIcon />
             </Link>
-                <Link className={`${classes.button} ${color}`} href="https://www.facebook.com/bcstilesolutions" rel="noopener noreferrer" target="_blank">
+                <Link
+                    className={`${classes.button} ${color}`}
+                    href="https://www.facebook.com/bcstilesolutions"
+                    rel="noopener noreferrer"
+                    target="_blank">
                 <FacebookIcon />
             </Link>
         </Box>

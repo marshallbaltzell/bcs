@@ -11,8 +11,8 @@ import { QuoteButton, SocialMediaLinks } from '../ui/index.js';
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
+        marginTop: theme.spacing(12),
         marginBottom: theme.spacing(8),
-        marginTop: theme.spacing(8),
     },
     intro: {
         backgroundColor: theme.palette.secondary.main,
@@ -34,7 +34,10 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    quote: {
+        marginBottom: theme.spacing(4),
+    },
 }));
 
 const Hero = (props) => {
@@ -74,7 +77,9 @@ const Hero = (props) => {
 
                             <GridListTile cols={1} rows={1}>
                                 <Box className={classes.links}>
-                                    <QuoteButton />
+                                    <Box className={classes.quote}>
+                                        <QuoteButton />
+                                    </Box>
                                     <SocialMediaLinks color="white" />
                                 </Box>
                             </GridListTile>

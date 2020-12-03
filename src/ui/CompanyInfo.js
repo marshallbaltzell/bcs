@@ -12,17 +12,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function CompanyInfo() {
+const CompanyInfo = (props) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            <Typography variant="button" display="block" align="right">
+            <Typography variant="button" display="block" align={props.align}>
                 <Link href="https://goo.gl/maps/Pg3HRSSQBxjhF1qSA" target="_blank" rel="noopener noreferrer" underline="none" color="secondary">
                     <LocationOnIcon className={classes.icon} />6425A Goodrich Ave, St Louis Park, MN 55426
                 </Link>
             </Typography>
-            <Typography variant="button" display="block" align="right">
+            <Typography variant="button" display="block" align={props.align}>
                 <Link href="mailto:info1@bcstile.com" target="_blank" rel="noopener noreferrer" underline="none" color="secondary">
                     <MailIcon className={classes.icon} />info1@bcstile.com
                 </Link>

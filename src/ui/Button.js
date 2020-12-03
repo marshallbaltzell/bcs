@@ -6,16 +6,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: 'transparent',
         padding: theme.spacing(1, 2),
-        
-
-        // '&.filled': {
-        //     backgroundColor: 'rgb(0,0,255)',
-        //     color: 'rgb(255,0,135)',
-        // },
-
-        // '&.oulined': {
-        //     border: '2px solid #444444',
-        // }
     },
 }));
 
