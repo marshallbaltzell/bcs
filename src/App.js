@@ -5,10 +5,16 @@ import { Header, Content } from './ui';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: theme.palette.primary.main,
+    // background: theme.palette.primary.main,
+    background: 'radial-gradient(ellipse at center top, rgba(255, 188, 55, 1) 0%, rgba(249, 165, 0, 1) 100%)',
     width: '100%',
     height: '100%',
     minHeight: '100vh',
+  },
+  hidden: {
+    height: 0,
+    opacity: 0,
+    pointerEvents: 'none',
   },
 }));
 
@@ -49,9 +55,13 @@ function App() {
   };
 
   return (
-    <div className={classes.root} ref={containerRef}>
+    <div className={classes.root}>
       <Header {...state} />
-      <Content {...state} onChange={handleChange} />
+
+      <Content {...state} onChange={handleChange}>
+        <div className={classes.hidden} ref={containerRef}></div>
+      </Content>
+      
     </div>
   );
 }

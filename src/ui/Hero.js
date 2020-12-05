@@ -11,8 +11,6 @@ import { QuoteButton, SocialMediaLinks } from '../ui/index.js';
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
-        marginTop: theme.spacing(12),
-        marginBottom: theme.spacing(8),
     },
     intro: {
         backgroundColor: theme.palette.secondary.main,

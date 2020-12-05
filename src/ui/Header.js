@@ -5,40 +5,27 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
 import Hidden from '@material-ui/core/Hidden';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 const useStyles = makeStyles((theme) => ({
-    toolbarLg: {
+    toolbar: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        background: '#F9A500', // TODO: change based on scroll position
-        padding: theme.spacing(4),
-    },
-    toolbarSm: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        background: theme.palette.primary.main,
-        padding: theme.spacing(1, 4, 1),
     },
     left: {
-        flexGrow: 1,
-        flexShrink: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
     center: {
-        flexGrow: 0,
-        flexShrink: 0,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
     },
     right: {
-        flexGrow: 1,
-        flexShrink: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
@@ -47,43 +34,91 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         textAlign: 'center',
     },
+    view: {
+        transition: 'opacity 0.4s ease-out',
+    },
+    show: {
+        opacity: 1,
+    },
+    hide: {
+        opacity: 0,
+        pointerEvents: 'none',
+    },
 }));
+
+function ElevationScroll(props) {
+    const { children } = props;
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 60,
+    });
+
+    return React.cloneElement(children, {
+        elevation: trigger ? 4 : 0,
+        color: trigger ? 'primary' : 'transparent',
+    });
+}
+
+function ViewScroll(props) {
+    const { children } = props;
+    const classes = useStyles();
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 60,
+    });
+
+    return React.cloneElement(children, {
+        className: `${classes.left} ${classes.view} ${trigger ? classes.show : classes.hide}`,
+    });
+}
 
 const Header = (props) => {
     const classes = useStyles();
 
     return (
-        <AppBar>
+        <>
             <Hidden smDown>
-                <Toolbar className={classes.toolbarLg}>
-                    <Grid container spacing={0}>
-                        <Grid item xs={5} className={classes.left}>
-                            <SocialMediaLinks />
-                            <Box className={classes.quote}><QuoteButton /></Box>
-                        </Grid>
-                        <Grid item xs={2} className={classes.center}>
-                            <BCSLogoIcon {...props}/>
-                        </Grid>
-                        <Grid item xs={5} className={classes.right}>
-                            <CompanyInfo align="right" />
-                        </Grid>
-                    </Grid>
-                </Toolbar>
+                <ElevationScroll>
+                    <AppBar>
+                        <Toolbar disableGutters className={classes.toolbar}>
+                            <Container maxWidth="lg">
+                                <Grid container spacing={0}>
+                                    <Grid item xs={5} className={classes.left}>
+                                        <ViewScroll>
+                                            <div>
+                                                <SocialMediaLinks />
+                                                <Box className={classes.quote}><QuoteButton /></Box>
+                                            </div>
+                                        </ViewScroll>
+                                    </Grid>
+                                    <Grid item xs={2} className={classes.center}>
+                                        <BCSLogoIcon {...props} />
+                                    </Grid>
+                                    <Grid item xs={5} className={classes.right}>
+                                        <CompanyInfo align="right" />
+                                    </Grid>
+                                </Grid>
+                            </Container>
+                        </Toolbar>
+                    </AppBar>
+                </ElevationScroll>
             </Hidden>
-
+        
             <Hidden mdUp>
-                <Toolbar className={classes.toolbarSm}>
-                    <Grid container spacing={0}>
-                        <Grid item xs={6} className={classes.left}>
-                            <BCSLogoIcon {...props} />
+                <AppBar className={classes.appSm}>
+                    <Toolbar className={classes.toolbar}>
+                        <Grid container spacing={0}>
+                            <Grid item xs={6} className={classes.left}>
+                                <BCSLogoIcon {...props} />
+                            </Grid>
+                            <Grid item xs={6} className={classes.right}>
+                                <QuoteButton />
+                            </Grid>
                         </Grid>
-                        <Grid item xs={6} className={classes.right}>
-                            <QuoteButton />
-                        </Grid>
-                    </Grid>
-                </Toolbar>
+                    </Toolbar>
+                </AppBar>
             </Hidden>
-        </AppBar>
+        </>
     );
 }
 
