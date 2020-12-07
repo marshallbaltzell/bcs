@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
 
         '& p': {
-            padding: theme.spacing(3),
+            padding: theme.spacing(2),
         }
     },
     links: {
