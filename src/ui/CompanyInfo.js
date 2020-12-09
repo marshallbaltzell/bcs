@@ -10,6 +10,13 @@ const useStyles = makeStyles((theme) => ({
         verticalAlign: 'middle',
         marginRight: theme.spacing(1),
     },
+    spacer: {
+        height: theme.spacing(4),
+    },
+    box: {
+        display: 'flex',
+        alignItems: 'center',
+    },
 }));
 
 const CompanyInfo = (props) => {
@@ -19,9 +26,20 @@ const CompanyInfo = (props) => {
         <div className={classes.root}>
             <Typography variant="button" display="block" align={props.align}>
                 <Link href="https://goo.gl/maps/Pg3HRSSQBxjhF1qSA" target="_blank" rel="noopener noreferrer" underline="none" color="secondary">
-                    <LocationOnIcon className={classes.icon} />6425A Goodrich Ave, St Louis Park, MN 55426
+                    <div className={classes.box}>
+                        <LocationOnIcon className={classes.icon} />
+                        {props.grid === 2
+                            ?
+                            <span>6425A Goodrich Ave,<br/>St Louis Park, MN 55426</span>
+                            :
+                            <span>6425A Goodrich Ave, St Louis Park, MN 55426</span>
+                        }
+                    </div>
                 </Link>
             </Typography>
+            {props.grid === 2 && 
+                <div className={classes.spacer}></div>
+            }
             <Typography variant="button" display="block" align={props.align}>
                 <Link href="mailto:info1@bcstile.com" target="_blank" rel="noopener noreferrer" underline="none" color="secondary">
                     <MailIcon className={classes.icon} />info1@bcstile.com

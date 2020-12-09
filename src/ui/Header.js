@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    appSm: {
+        padding: theme.spacing(1, 2),
+    },
     left: {
         display: 'flex',
         alignItems: 'center',
@@ -109,10 +112,10 @@ const Header = (props) => {
                 <AppBar className={classes.appSm}>
                     <Toolbar className={classes.toolbar}>
                         <Grid container spacing={0}>
-                            <Grid item xs={6} className={classes.left}>
+                            <Grid item xs={2} >
                                 <BCSLogoIcon {...props} />
                             </Grid>
-                            <Grid item xs={6} className={classes.right}>
+                            <Grid item xs={10} className={classes.right}>
                                 <QuoteButton />
                             </Grid>
                         </Grid>

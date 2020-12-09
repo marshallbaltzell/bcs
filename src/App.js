@@ -28,10 +28,9 @@ function App() {
   const containerRef = React.createRef();
 
   const [height, setHeight] = useState(200);
-  const [value, setValue] = useState(0);
   const [grid, setGrid] = useState(6);
 
-  const state = { grid, height, value };
+  const state = { grid, height };
 
   useEffect(() => {
     if (sm) {
@@ -41,7 +40,6 @@ function App() {
     } else if (lg) {
       setGrid(6);
     }
-    setValue(0);
   }, [sm, md, lg]);
 
   useEffect(() => {
@@ -50,15 +48,11 @@ function App() {
     setHeight(ref.width / grid);
   }, [grid, containerRef]);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <div className={classes.root}>
       <Header {...state} />
 
-      <Content {...state} onChange={handleChange}>
+      <Content {...state}>
         <div className={classes.hidden} ref={containerRef}></div>
       </Content>
       

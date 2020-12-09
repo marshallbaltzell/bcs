@@ -1,22 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
-import { Hero, Gallery, CompanyInfo } from '../ui/index.js';
+import ViewComfyIcon from '@material-ui/icons/ViewComfy';
+import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
+import {
+    Hero,
+    Gallery,
+    CompanyInfo,
+    SocialMediaLinks
+} from '../ui/index.js';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         paddingTop: theme.spacing(38),
+        paddingBottom: theme.spacing(8),
+    },
+    rootSm: {
+        padding: theme.spacing(15, 4, 8),
     },
     hero: {
         marginBottom: theme.spacing(8),
     },
+    heroSm: {
+        marginBottom: theme.spacing(2),
+    },
     paper: {
-        padding: theme.spacing(8),
-        margin: theme.spacing(8),
+        padding: theme.spacing(4),
+        margin: theme.spacing(4, 0),
+    },
+    tabIcon: {
+        verticalAlign: 'middle',
+        marginRight: theme.spacing(0.5),
+    },
+    links: {
+        width: '100%',
+        height: theme.spacing(20),
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    center: {
+        textAlign: 'center',
     },
 }));
 
@@ -31,22 +59,32 @@ function TabPanel(props) {
             aria-labelledby={`simple-tab-${index}`}
             {...other}
         >
-            {value === index && (
-                <Box>
-                    {children}
-                </Box>
-            )}
+            <Box>
+                {children}
+            </Box>
         </div>
     );
 }
 
 const Content = (props) => {
     const classes = useStyles();
-    const { value, grid, children, onChange } = props;
+    const [value, setValue] = useState(0);
+    const { grid, children } = props;
+    const root = grid === 2 ? classes.rootSm : classes.root;
+
+    useEffect(() => {
+        if (grid !== 2) {
+            setValue(0);
+        }
+    }, [grid]);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
     return (
-        <Container maxWidth="lg" className={classes.root}>
-            <Box className={classes.hero}>
+        <Container maxWidth="lg" className={root}>
+            <Box className={grid === 2 ? classes.heroSm : classes.hero}>
                 <Hero {...props} />
             </Box>
 
@@ -55,9 +93,33 @@ const Content = (props) => {
 
             {/* place tabs for mobile [gallery|contact] */}
             {grid === 2 &&
-                <Tabs value={value} onChange={onChange} aria-label="simple tabs example">
-                    <Tab label="Gallery" />
-                    <Tab label="Contact" />
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    className={classes.tabs}
+                    aria-label="tab navigation"
+                    centered
+                    textColor="secondary"
+                    variant="fullWidth">
+
+                    <Tab
+                        className={classes.tab}
+                        label={
+                            <div>
+                                <ViewComfyIcon className={classes.tabIcon} /> 
+                                Gallery
+                            </div>
+                        }
+                    />
+                    <Tab
+                        className={classes.tab}
+                        label={
+                            <div>
+                                <ChatBubbleIcon className={classes.tabIcon} />
+                                Contact
+                            </div>
+                        }
+                    />
                 </Tabs>
             }
 
@@ -68,8 +130,13 @@ const Content = (props) => {
             {grid === 2 && 
                 <TabPanel value={value} index={1}>
                     <Paper elevation={4} square className={classes.paper}>
-                        <CompanyInfo align="left" />
+                        <CompanyInfo {...props} align="left" />
                     </Paper>
+                    <Box className={classes.links}>
+                        <span className={classes.center}>
+                            <SocialMediaLinks lg={true} />
+                        </span>
+                    </Box>
                 </TabPanel>
             }
         </Container>

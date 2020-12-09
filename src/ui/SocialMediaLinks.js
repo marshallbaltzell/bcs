@@ -21,11 +21,15 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    large: {
+        fontSize: '3rem',
+    },
 }));
 
 const SocialMediaLinks = (props) => {
     const classes = useStyles();
     const color = props.color ? classes.color : '';
+    const size = props.lg ? classes.large : '';
 
     return (
         <>
@@ -34,20 +38,24 @@ const SocialMediaLinks = (props) => {
             variant="button">
                 Connect
         </Typography>
+
         <Box className={classes.links}>
-                <Link
-                    className={`${classes.button} ${color}`}
-                    href="https://www.instagram.com/bcs_tile/"
-                    rel="noopener noreferrer"
-                    target="_blank">
-                <InstagramIcon />
+            <Link
+                className={`${classes.button} ${color}`}
+                href="https://www.instagram.com/bcs_tile/"
+                rel="noopener noreferrer"
+                target="_blank">
+
+                <InstagramIcon className={size} />
             </Link>
-                <Link
-                    className={`${classes.button} ${color}`}
-                    href="https://www.facebook.com/bcstilesolutions"
-                    rel="noopener noreferrer"
-                    target="_blank">
-                <FacebookIcon />
+
+            <Link
+                className={`${classes.button} ${color}`}
+                href="https://www.facebook.com/bcstilesolutions"
+                rel="noopener noreferrer"
+                target="_blank">
+
+                <FacebookIcon className={size} />
             </Link>
         </Box>
         </>
