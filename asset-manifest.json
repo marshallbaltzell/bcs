@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/bcs/static/js/main.67956982.chunk.js",
-    "main.js.map": "/bcs/static/js/main.67956982.chunk.js.map",
-    "runtime-main.js": "/bcs/static/js/runtime-main.7abc0cc5.js",
-    "runtime-main.js.map": "/bcs/static/js/runtime-main.7abc0cc5.js.map",
+    "main.js": "/bcs/static/js/main.1a9d37c4.chunk.js",
+    "main.js.map": "/bcs/static/js/main.1a9d37c4.chunk.js.map",
+    "runtime-main.js": "/bcs/static/js/runtime-main.bd5f3881.js",
+    "runtime-main.js.map": "/bcs/static/js/runtime-main.bd5f3881.js.map",
     "static/css/2.97457253.chunk.css": "/bcs/static/css/2.97457253.chunk.css",
-    "static/js/2.0112009f.chunk.js": "/bcs/static/js/2.0112009f.chunk.js",
-    "static/js/2.0112009f.chunk.js.map": "/bcs/static/js/2.0112009f.chunk.js.map",
-    "static/js/3.d760b7d2.chunk.js": "/bcs/static/js/3.d760b7d2.chunk.js",
-    "static/js/3.d760b7d2.chunk.js.map": "/bcs/static/js/3.d760b7d2.chunk.js.map",
+    "static/js/2.cc72a674.chunk.js": "/bcs/static/js/2.cc72a674.chunk.js",
+    "static/js/2.cc72a674.chunk.js.map": "/bcs/static/js/2.cc72a674.chunk.js.map",
+    "static/js/3.ccbc2c91.chunk.js": "/bcs/static/js/3.ccbc2c91.chunk.js",
+    "static/js/3.ccbc2c91.chunk.js.map": "/bcs/static/js/3.ccbc2c91.chunk.js.map",
     "index.html": "/bcs/index.html",
     "static/css/2.97457253.chunk.css.map": "/bcs/static/css/2.97457253.chunk.css.map",
-    "static/js/2.0112009f.chunk.js.LICENSE.txt": "/bcs/static/js/2.0112009f.chunk.js.LICENSE.txt",
+    "static/js/2.cc72a674.chunk.js.LICENSE.txt": "/bcs/static/js/2.cc72a674.chunk.js.LICENSE.txt",
     "static/media/index.css": "/bcs/static/media/nunito-sans-vietnamese-400-normal.5eb08514.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.7abc0cc5.js",
+    "static/js/runtime-main.bd5f3881.js",
     "static/css/2.97457253.chunk.css",
-    "static/js/2.0112009f.chunk.js",
-    "static/js/main.67956982.chunk.js"
+    "static/js/2.cc72a674.chunk.js",
+    "static/js/main.1a9d37c4.chunk.js"
   ]
 }
