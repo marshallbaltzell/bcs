@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Header, Content } from './ui';
+import { Header, Content, Background } from './ui';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,6 +55,8 @@ function App() {
       <Content {...state}>
         <div className={classes.hidden} ref={containerRef}></div>
       </Content>
+
+      <Background />
       
     </div>
   );

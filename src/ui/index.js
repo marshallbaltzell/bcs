@@ -7,6 +7,7 @@ import Header from "./Header.js";
 import Hero from "./Hero.js";
 import Button from "./Button.js";
 import QuoteButton from "./QuoteButton.js";
+import Background from "./Background.js";
 
 export {
     CompanyInfo,
@@ -18,4 +19,5 @@ export {
     Hero,
     Button,
     QuoteButton,
+    Background,
 };

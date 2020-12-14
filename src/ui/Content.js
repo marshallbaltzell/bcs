@@ -16,10 +16,14 @@ import {
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        position: 'relative',
+        zIndex: 2, // go above bg images
         paddingTop: theme.spacing(38),
         paddingBottom: theme.spacing(8),
     },
     rootSm: {
+        position: 'relative',
+        zIndex: 2, // go above bg images
         padding: theme.spacing(15, 4, 8),
     },
     hero: {

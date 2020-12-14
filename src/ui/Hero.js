@@ -7,6 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import { QuoteButton, SocialMediaLinks } from '../ui/index.js';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,7 +45,35 @@ const useStyles = makeStyles((theme) => ({
     quote: {
         marginBottom: theme.spacing(4),
     },
+    imgReplace: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        zIndex: 1,
+        transition: 'opacity 0.4s ease-out',
+
+    },
+    show: {
+        opacity: 1,
+    },
+    hide: {
+        opacity: 0,
+        pointerEvents: 'none',
+    }
 }));
+
+function ViewScrollDown(props) {
+    const { children } = props;
+    const classes = useStyles();
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 60,
+    });
+
+    return React.cloneElement(children, {
+        className: `${classes.imgReplace} ${trigger ? classes.show : classes.hide}`,
+    });
+}
 
 const Hero = (props) => {
     const classes = useStyles();
@@ -83,6 +112,9 @@ const Hero = (props) => {
                                     </GridListTile>
 
                                     <GridListTile cols={1} rows={1}>
+                                        <ViewScrollDown>
+                                            <img className={classes.imgReplace} src="https://instagram.ffcm1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/17126716_1802795406636862_99970792653062144_n.jpg?_nc_ht=instagram.ffcm1-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=IHmGSu-TcGMAX9413H9&tp=1&oh=c598515dec7eb559da1d37699ac14825&oe=60017705" alt="Vanity backsplash, soldier course, bathroom." />
+                                        </ViewScrollDown>
                                         <Box className={classes.links}>
                                             <Box className={classes.quote}>
                                                 <QuoteButton />
