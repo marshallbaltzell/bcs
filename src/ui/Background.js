@@ -4,7 +4,13 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        opacity: 0.05,
+        position: 'fixed',
+        top: 0,
+        width: '100%',
+        height: '100%',
+        minHeight: '100vh',
+        background: 'radial-gradient(ellipse at center top, rgba(255, 188, 55, 1) 0%, rgba(249, 165, 0, 1) 100%)',
+        // background: theme.palette.primary.main,
     },
     icon: {
         position: 'fixed',
@@ -13,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 1,
         width: '100%',
         height: '100%',
+        opacity: 0.05,
     },
     icon1: {
         top: '10%',

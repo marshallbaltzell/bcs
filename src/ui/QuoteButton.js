@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '../ui/index.js';
+import { Button, QuoteDialog } from '../ui/index.js';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,11 +14,24 @@ const useStyles = makeStyles((theme) => ({
 
 const QuoteButton = () => {
     const classes = useStyles();
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
-        <Button className={classes.root}>
-            <AttachMoneyIcon /> Get a Quote
-        </Button>
+        <>
+            <Button className={classes.root} onClick={handleClickOpen}>
+                <AttachMoneyIcon /> Get a Quote
+            </Button>
+
+            <QuoteDialog open={open} onClose={handleClose} />
+        </>
     );
 }
 

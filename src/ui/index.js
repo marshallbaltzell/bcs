@@ -7,6 +7,8 @@ import Header from "./Header.js";
 import Hero from "./Hero.js";
 import Button from "./Button.js";
 import QuoteButton from "./QuoteButton.js";
+import QuoteDialog from "./QuoteDialog.js";
+import QuoteForm from "./QuoteForm.js";
 import Background from "./Background.js";
 
 export {
@@ -19,5 +21,7 @@ export {
     Hero,
     Button,
     QuoteButton,
+    QuoteDialog,
+    QuoteForm,
     Background,
 };
