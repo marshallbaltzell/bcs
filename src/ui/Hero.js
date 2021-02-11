@@ -6,7 +6,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
-import { QuoteButton, SocialMediaLinks } from '../ui/index.js';
+import { AboutButton, QuoteButton, SocialMediaLinks } from '../ui/index.js';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,22 +17,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.secondary.main,
         color: theme.palette.secondary.contrastText,
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        padding: theme.spacing(1, 2),
 
         '& p': {
-            padding: theme.spacing(2),
+            padding: theme.spacing(1, 0),
+            fontSize: '0.85rem',
         },
     },
-    // introSm: {
-    //     backgroundColor: theme.palette.secondary.main,
-    //     color: theme.palette.secondary.contrastText,
-
-    //     '& p': {
-    //         padding: theme.spacing(2),
-    //     },
-    // },
     links: {
         backgroundColor: theme.palette.background.paper,
         color: theme.palette.secondary.main,
@@ -51,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
         zIndex: 1,
         transition: 'opacity 0.4s ease-out',
+        backgroundColor: 'white',
 
     },
     show: {
@@ -87,10 +79,6 @@ const Hero = (props) => {
                 <Box className={classes.root} style={{"height": height * rows}}>
                     <Paper elevation={8} square>
                             <GridList spacing={0} cellHeight={height} cols={grid}>
-                            
-                            {/* <GridListTile key={index} style={{ "padding": "1px" }} cols={1} rows={1}>
-                                <Skeleton animation="wave" variant="rect" width={this.state.height - 1} height={this.state.height - 1} />
-                            </GridListTile> */}
 
                             <GridListTile cols={2} rows={2}>
                                 <img src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/27880675_555926854785478_7132403067479130112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_cat=110&_nc_ohc=DMcQcGWrxq8AX9kn7yZ&_nc_tp=24&oh=ea2c9d276ce43859420f171ad527c6a4&oe=5FDB65A9" alt="Glass mosaic fireplace." />
@@ -108,6 +96,8 @@ const Hero = (props) => {
                                             <Typography variant="body1">
                                                 Get a quote, or contact us with any questions. We're happy to help!
                                             </Typography>
+                                            
+                                            <AboutButton />
                                         </Box>
                                     </GridListTile>
 
@@ -140,14 +130,16 @@ const Hero = (props) => {
                 <Box className={classes.root}>
                     <Paper elevation={8} square>
                         <Box className={classes.intro}>
-                            <Typography variant="body2" paragraph>
+                            <Typography variant="body2">
                                 We are tile specialists serving the Twin Cities and surrounding metro.
                                 BCS is fast, reliable and provides nothing less than the highest quality installations.
                             </Typography>
 
-                            <Typography variant="body2" paragraph>
+                            <Typography variant="body2">
                                 Get a quote, or contact us with any questions. We're happy to help!
                             </Typography>
+
+                            <AboutButton />
                         </Box>
                     </Paper>
                 </Box>

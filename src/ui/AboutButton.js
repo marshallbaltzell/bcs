@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, QuoteDialog } from '../ui/index.js';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import { Button, AboutDialog } from '../ui/index.js';
 
 const useStyles = makeStyles((theme) => ({
     button: {
-        border: `2px solid ${theme.palette.secondary.main}`,
-        color: theme.palette.secondary.main,
-        borderRadius: '0',
-        paddingRight: theme.spacing(2),
-        backgroundColor: 'transparent !important',
+        border: `2px solid ${theme.palette.primary.main} !important`,
+        color: `${theme.palette.primary.main} !important`,
+        borderRadius: '0 !important',
+        marginTop: `${theme.spacing(1)} !important`,
+        backgroundColor: 'transparent !important'
     },
 }));
 
-const QuoteButton = () => {
+const AboutButton = () => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
 
@@ -28,12 +27,12 @@ const QuoteButton = () => {
     return (
         <>
             <Button className={classes.button} onClick={handleClickOpen}>
-                <AttachMoneyIcon /> Get a Quote
+                Learn more about BCS
             </Button>
 
-            <QuoteDialog open={open} onClose={handleClose} />
+            <AboutDialog open={open} onClose={handleClose} />
         </>
     );
 }
 
-export default QuoteButton;
+export default AboutButton;

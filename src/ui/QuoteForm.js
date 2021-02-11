@@ -119,6 +119,7 @@ const QuoteForm = (props) => {
     const classes = useStyles();
     const { submit } = props;
 
+    // Field## where ## is the Wufoo form field ID
     const [state, setState] = useState({
         527: false, // Bathroom
         528: false, // Kitchen
@@ -173,6 +174,7 @@ const QuoteForm = (props) => {
         sendData(data);
     };
 
+    // https://medium.com/@everdimension/how-to-handle-forms-with-just-react-ac066c48bd4f
     const parseData = (data, form) => {
         for (let name of data.keys()) {
             const input = form.elements[name];

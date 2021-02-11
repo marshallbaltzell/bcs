@@ -1,27 +1,35 @@
-import CompanyInfo from "./CompanyInfo.js";
+import AboutButton from "./AboutButton.js";
+import AboutDialog from "./AboutDialog.js";
+import Background from "./Background.js";
 import BCSLogoIcon from "./BCSLogoIcon.js";
-import SocialMediaLinks from "./SocialMediaLinks.js";
+import Button from "./Button.js";
+import CompanyInfo from "./CompanyInfo.js";
+import ContactDialog from "./ContactDialog.js";
 import Content from "./Content.js";
+import Dialog from "./Dialog.js";
 import Gallery from "./Gallery.js";
 import Header from "./Header.js";
 import Hero from "./Hero.js";
-import Button from "./Button.js";
 import QuoteButton from "./QuoteButton.js";
 import QuoteDialog from "./QuoteDialog.js";
 import QuoteForm from "./QuoteForm.js";
-import Background from "./Background.js";
+import SocialMediaLinks from "./SocialMediaLinks.js";
 
 export {
-    CompanyInfo,
+    AboutButton,
+    AboutDialog,
+    Background,
     BCSLogoIcon,
-    SocialMediaLinks,
+    Button,
+    CompanyInfo,
+    ContactDialog,
     Content,
+    Dialog,
     Gallery,
     Header,
     Hero,
-    Button,
     QuoteButton,
     QuoteDialog,
     QuoteForm,
-    Background,
+    SocialMediaLinks,
 };

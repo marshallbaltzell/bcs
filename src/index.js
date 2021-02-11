@@ -9,7 +9,7 @@ import "fontsource-nunito-sans";
 const theme = createMuiTheme({
   typography: {
     fontFamily: [
-      '"Nunito Sans"',
+      '"Nunito Sans"', // https://fontsource.github.io/search-directory/#nunito-sans
       'Roboto',
       '"Helvetica Neue"',
       'Arial',
@@ -19,6 +19,8 @@ const theme = createMuiTheme({
       fontWeight: 900,
     }
   },
+
+  /* Set theme palette base on BCS branding */
   palette: {
     primary: {
       main: '#F9A500', // orange
@@ -44,4 +46,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals(console.log);

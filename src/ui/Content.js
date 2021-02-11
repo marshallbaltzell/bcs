@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     rootSm: {
         position: 'relative',
         zIndex: 2, // go above bg images
-        padding: theme.spacing(15, 4, 8),
+        padding: theme.spacing(15, 2, 8),
     },
     hero: {
         marginBottom: theme.spacing(8),
