@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
     },
     paper: {
-        padding: theme.spacing(4),
-        margin: theme.spacing(4, 0),
+        padding: theme.spacing(2, 4),
+        marginTop: theme.spacing(2),
     },
     tabIcon: {
         verticalAlign: 'middle',
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
     links: {
         width: '100%',
-        height: theme.spacing(20),
+        height: theme.spacing(16),
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

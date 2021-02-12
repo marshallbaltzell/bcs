@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     appSm: {
-        padding: theme.spacing(1, 2),
+        padding: theme.spacing(0, 2),
     },
     left: {
         display: 'flex',

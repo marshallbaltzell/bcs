@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     large: {
-        fontSize: '3rem',
+        fontSize: '2rem',
     },
 }));
 
@@ -33,10 +33,8 @@ const SocialMediaLinks = (props) => {
 
     return (
         <>
-        <Typography 
-            className={classes.label}
-            variant="button">
-                Connect
+        <Typography variant="button" color="secondary">
+            Connect
         </Typography>
 
         <Box className={classes.links}>

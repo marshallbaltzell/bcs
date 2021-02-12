@@ -5,9 +5,13 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Hidden from '@material-ui/core/Hidden';
 import { AboutButton, QuoteButton, SocialMediaLinks } from '../ui/index.js';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+
+import hero1 from '../images/hero1.jpg';
+import hero2 from '../images/hero2.jpg';
+import hero3 from '../images/hero3.jpg';
+import hero4 from '../images/hero4.jpg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -17,10 +21,19 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.secondary.main,
         color: theme.palette.secondary.contrastText,
         height: '100%',
-        padding: theme.spacing(1, 2),
-
+        [theme.breakpoints.up('md')]: {
+            padding: theme.spacing(1, 2),
+            '& p': {
+                padding: theme.spacing(1, 0),
+            },
+        },
+        [theme.breakpoints.down('sm')]: {
+            padding: theme.spacing(2),
+            '& p': {
+                padding: theme.spacing(0, 0, 2),
+            },
+        },
         '& p': {
-            padding: theme.spacing(1, 0),
             fontSize: '0.85rem',
         },
     },
@@ -51,7 +64,22 @@ const useStyles = makeStyles((theme) => ({
     hide: {
         opacity: 0,
         pointerEvents: 'none',
-    }
+    },
+    hiddenSmDown: {
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
+    },
+    hiddenMdDown: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none',
+        },
+    },
+    hiddenMdUp: {
+        [theme.breakpoints.up('md')]: {
+            display: 'none',
+        },
+    },
 }));
 
 function ViewScrollDown(props) {
@@ -75,75 +103,71 @@ const Hero = (props) => {
 
     return (
         <>
-            <Hidden smDown>
-                <Box className={classes.root} style={{"height": height * rows}}>
-                    <Paper elevation={8} square>
-                            <GridList spacing={0} cellHeight={height} cols={grid}>
+            <Box className={`${classes.root} ${classes.hiddenSmDown}`} style={{"height": height * rows}}>
+                <Paper elevation={8} square>
+                        <GridList spacing={0} cellHeight={height} cols={grid}>
 
-                            <GridListTile cols={2} rows={2}>
-                                <img src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/27880675_555926854785478_7132403067479130112_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_cat=110&_nc_ohc=DMcQcGWrxq8AX9kn7yZ&_nc_tp=24&oh=ea2c9d276ce43859420f171ad527c6a4&oe=5FDB65A9" alt="Glass mosaic fireplace." />
-                            </GridListTile>
+                        <GridListTile cols={2} rows={2}>
+                            <img src={hero2} alt="Glass mosaic fireplace." />
+                        </GridListTile>
 
-                            <GridListTile cols={2} rows={rows}>
-                                <GridList spacing={0} cellHeight={height} cols={2}>
-                                    <GridListTile cols={2} rows={1}>
-                                        <Box className={classes.intro}>
-                                            <Typography variant="body1">
-                                                We are tile specialists serving the Twin Cities and surrounding metro. 
-                                                BCS is fast, reliable and provides nothing less than the highest quality installations. 
-                                            </Typography>
+                        <GridListTile cols={2} rows={rows}>
+                            <GridList spacing={0} cellHeight={height} cols={2}>
+                                <GridListTile cols={2} rows={1}>
+                                    <Box className={classes.intro}>
+                                        <Typography variant="body1">
+                                            We are tile specialists serving the Twin Cities and surrounding metro. 
+                                            BCS is fast, reliable and provides nothing less than the highest quality installations. 
+                                        </Typography>
 
-                                            <Typography variant="body1">
-                                                Get a quote, or contact us with any questions. We're happy to help!
-                                            </Typography>
-                                            
-                                            <AboutButton />
+                                        <Typography variant="body1">
+                                            Get a quote, or contact us with any questions. We're happy to help!
+                                        </Typography>
+                                        
+                                        <AboutButton />
+                                    </Box>
+                                </GridListTile>
+
+                                <GridListTile cols={1} rows={1}>
+                                    <ViewScrollDown>
+                                        <img className={classes.imgReplace} src={hero4} alt="Vanity backsplash, soldier course, bathroom." />
+                                    </ViewScrollDown>
+                                    <Box className={classes.links}>
+                                        <Box className={classes.quote}>
+                                            <QuoteButton />
                                         </Box>
-                                    </GridListTile>
+                                        <SocialMediaLinks color="white" />
+                                    </Box>
+                                </GridListTile>
+                                <GridListTile cols={1} rows={1}>
+                                    <img src={hero3} alt="Glass subway tile style tub surround." />
+                                </GridListTile>
+                            </GridList>
+                        </GridListTile>
+                        
+                        <GridListTile cols={2} rows={2} className={classes.hiddenMdDown}>
+                            <img src={hero1} alt="Bathroom floor with claw foot bathtub." />
+                        </GridListTile>
+                    </GridList>
+                </Paper>
+            </Box>
 
-                                    <GridListTile cols={1} rows={1}>
-                                        <ViewScrollDown>
-                                            <img className={classes.imgReplace} src="https://instagram.ffcm1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/17126716_1802795406636862_99970792653062144_n.jpg?_nc_ht=instagram.ffcm1-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=IHmGSu-TcGMAX9413H9&tp=1&oh=c598515dec7eb559da1d37699ac14825&oe=60017705" alt="Vanity backsplash, soldier course, bathroom." />
-                                        </ViewScrollDown>
-                                        <Box className={classes.links}>
-                                            <Box className={classes.quote}>
-                                                <QuoteButton />
-                                            </Box>
-                                            <SocialMediaLinks color="white" />
-                                        </Box>
-                                    </GridListTile>
-                                    <GridListTile cols={1} rows={1}>
-                                        <img src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-15/e35/80780902_176300916778274_333208448218693331_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_cat=102&_nc_ohc=1DQaQHm2FNMAX8AehH8&tp=18&oh=bfe4644ef750a1992cbd8caeb8135e77&oe=5FDACC12" alt="Glass subway tile style tub surround." />
-                                    </GridListTile>
-                                </GridList>
-                            </GridListTile>
-                            
-                            <GridListTile cols={2} rows={2}>
-                                <img src="https://scontent-mia3-2.cdninstagram.com/v/t51.2885-15/e35/17494963_1484240618266397_6403178128117596160_n.jpg?_nc_ht=scontent-mia3-2.cdninstagram.com&_nc_cat=105&_nc_ohc=cHO6Lpl08LkAX-jzqAj&tp=18&oh=e9abc06fdafd03a528a00500a724b0a1&oe=5FDD1BA9" alt="Bathroom floor with claw foot bathtub." />
-                            </GridListTile>
-                        </GridList>
-                    </Paper>
-                </Box>
-            </Hidden>
+            <Box className={`${classes.root} ${classes.hiddenMdUp}`}>
+                <Paper elevation={8} square>
+                    <Box className={classes.intro}>
+                        <Typography variant="body2">
+                            We are tile specialists serving the Twin Cities and surrounding metro.
+                            BCS is fast, reliable and provides nothing less than the highest quality installations.
+                        </Typography>
 
-            <Hidden mdUp>
-                <Box className={classes.root}>
-                    <Paper elevation={8} square>
-                        <Box className={classes.intro}>
-                            <Typography variant="body2">
-                                We are tile specialists serving the Twin Cities and surrounding metro.
-                                BCS is fast, reliable and provides nothing less than the highest quality installations.
-                            </Typography>
+                        <Typography variant="body2">
+                            Get a quote, or contact us with any questions. We're happy to help!
+                        </Typography>
 
-                            <Typography variant="body2">
-                                Get a quote, or contact us with any questions. We're happy to help!
-                            </Typography>
-
-                            <AboutButton />
-                        </Box>
-                    </Paper>
-                </Box>
-            </Hidden>
+                        <AboutButton />
+                    </Box>
+                </Paper>
+            </Box>
         </>
     );
 }
