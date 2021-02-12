@@ -1,26 +1,30 @@
 {
   "files": {
-    "main.js": "/bcs/static/js/main.319784a4.chunk.js",
-    "main.js.map": "/bcs/static/js/main.319784a4.chunk.js.map",
-    "runtime-main.js": "/bcs/static/js/runtime-main.a90186a6.js",
-    "runtime-main.js.map": "/bcs/static/js/runtime-main.a90186a6.js.map",
+    "main.js": "/bcs/static/js/main.cb8fd54c.chunk.js",
+    "main.js.map": "/bcs/static/js/main.cb8fd54c.chunk.js.map",
+    "runtime-main.js": "/bcs/static/js/runtime-main.d7c9cb2e.js",
+    "runtime-main.js.map": "/bcs/static/js/runtime-main.d7c9cb2e.js.map",
     "static/css/2.97457253.chunk.css": "/bcs/static/css/2.97457253.chunk.css",
-    "static/js/2.de364f27.chunk.js": "/bcs/static/js/2.de364f27.chunk.js",
-    "static/js/2.de364f27.chunk.js.map": "/bcs/static/js/2.de364f27.chunk.js.map",
-    "static/js/3.eddda559.chunk.js": "/bcs/static/js/3.eddda559.chunk.js",
-    "static/js/3.eddda559.chunk.js.map": "/bcs/static/js/3.eddda559.chunk.js.map",
+    "static/js/2.01d8d005.chunk.js": "/bcs/static/js/2.01d8d005.chunk.js",
+    "static/js/2.01d8d005.chunk.js.map": "/bcs/static/js/2.01d8d005.chunk.js.map",
+    "static/js/3.f57b24a5.chunk.js": "/bcs/static/js/3.f57b24a5.chunk.js",
+    "static/js/3.f57b24a5.chunk.js.map": "/bcs/static/js/3.f57b24a5.chunk.js.map",
     "index.html": "/bcs/index.html",
     "static/css/2.97457253.chunk.css.map": "/bcs/static/css/2.97457253.chunk.css.map",
-    "static/js/2.de364f27.chunk.js.LICENSE.txt": "/bcs/static/js/2.de364f27.chunk.js.LICENSE.txt",
+    "static/js/2.01d8d005.chunk.js.LICENSE.txt": "/bcs/static/js/2.01d8d005.chunk.js.LICENSE.txt",
+    "static/media/hero1.d9ab43d6.jpg": "/bcs/static/media/hero1.d9ab43d6.jpg",
+    "static/media/hero2.78f642c3.jpg": "/bcs/static/media/hero2.78f642c3.jpg",
+    "static/media/hero3.39197455.jpg": "/bcs/static/media/hero3.39197455.jpg",
+    "static/media/hero4.808e1d80.jpg": "/bcs/static/media/hero4.808e1d80.jpg",
     "static/media/index.css": "/bcs/static/media/nunito-sans-vietnamese-400-normal.5eb08514.woff2",
     "static/media/prema.73116e6e.jpg": "/bcs/static/media/prema.73116e6e.jpg",
     "static/media/steve.eaa19c49.jpg": "/bcs/static/media/steve.eaa19c49.jpg",
     "static/media/zack.f715d75c.jpg": "/bcs/static/media/zack.f715d75c.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a90186a6.js",
+    "static/js/runtime-main.d7c9cb2e.js",
     "static/css/2.97457253.chunk.css",
-    "static/js/2.de364f27.chunk.js",
-    "static/js/main.319784a4.chunk.js"
+    "static/js/2.01d8d005.chunk.js",
+    "static/js/main.cb8fd54c.chunk.js"
   ]
 }
